@@ -1,10 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Icon } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { MessagesPage } from '../pages/messages/messages';
+import { CategoriesPage } from '../pages/categories/categories';
+import { MapsPage } from '../pages/maps/maps';
+import { SettingsPage } from '../pages/settings/settings';
+import { AboutPage } from '../pages/about/about';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +20,21 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: HomePage, icon: "home" },
+      { title: 'Massages', component: MessagesPage, icon: "mail" },
+      { title: 'Categories', component: CategoriesPage, icon: "pricetag" },
+      { title: 'Maps', component: MapsPage, icon: "map" },
+      { title: 'Settings', component: SettingsPage, icon: "settings" },
+      { title: 'About', component: AboutPage, icon: "information-circle" },
+      { title: 'List', component: ListPage, icon: "listbox" }
+    //  { title: 'Logout', component: LogoutPage, icon: "logout" }
     ];
 
   }
